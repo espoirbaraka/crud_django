@@ -1,6 +1,23 @@
 {% extends "employee/base.html" %}
 
 {% block content %}
-    <p>Liste</p>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom complet</th>
+      <th scope="col">Telephone</th>
+      <th scope="col">Emp code</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for employee in employee_list %}
+        <tr>
+            <td>{{ employee.nom_complet }}</td>
+            <td>{{ employee.telephone }}</td>
+            <td>{{ employee.emp_code }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 {% endblock content %}
